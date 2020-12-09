@@ -7,6 +7,9 @@ const { brotliDecompressSync } = require('zlib')
 
 const app = express()
 
+// port definition
+const port = process.env.PORT || 3000
+
 // path definition
 const pathForViews = path.join(__dirname,'../templates/views')
 const publicFolderPath = path.join(__dirname,'../public')
@@ -88,6 +91,6 @@ app.get('*', (req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log("Server is listening on port 3000.")
+app.listen(port,()=>{
+    console.log("Server is listening on port "+port)
 })
